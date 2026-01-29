@@ -105,7 +105,7 @@ rule search_itsx:
         str(outdir) + "/itsx_out/itsx_out"
     shell:
         """
-        ITSx -i {input} -o {params} --cpu 4 -t F
+        ITSx -i {input} -o {params} --cpu 4 -t all
         """
 
 rule filter_itsx_table:
