@@ -1,4 +1,4 @@
-# ecmitser
+# itsqc
 
 [![Snakemake](https://img.shields.io/badge/snakemake-≥7.0-brightgreen.svg)](https://snakemake.github.io)
 [![Conda](https://img.shields.io/badge/conda-managed-green.svg)](https://docs.conda.io/en/latest/miniconda.html)
@@ -17,13 +17,13 @@ The pipeline takes one or more FASTA files as input and performs a full workflow
 
 The pipeline follows these main processing steps:
 
-`Input FASTA (*.fna)` &rarr; `1. Merge Files` &rarr; `2. Clean & Trim` &rarr; `3. Orient (vsearch)` &rarr; `4. Dereplicate (vsearch)` &rarr; `5. Extract ITS (ITSx)` &rarr; `6. Filter (non-ITS)
+`Input FASTA (*.fna)` &rarr; `1. Merge Files` &rarr; `2. Clean & Trim` &rarr; `3. Orient (vsearch)` &rarr; `4. Dereplicate (vsearch)` &rarr; `5. Extract ITS (ITSx)` &rarr; `6. Filter (non-ITS)`
 
 ---
 
 ## 🛠️ Installation
 
-`ecmitser` is built on Snakemake and uses Conda to manage all software dependencies automatically.
+`itsqc` is built on Snakemake and uses Conda to manage all software dependencies automatically.
 
 1.  **Clone the repository:**
     ```bash
@@ -90,20 +90,20 @@ The pipeline will create the specified `outdir` and organize all results into su
 ### Directory Structure
 
 ```
-ecmitser_out/
+itsqc_out/
 ├── clean/            # Cleaned, oriented, and dereplicated sequences
 ├── itsx_out/         # Raw output files from ITSx
 ├── merged/           # The single merged input FASTA file
 |
-├── ecmitser.wits.fna # <-- 2. FASTA file of dereplicated sequences with an ITS region
-└── ecmitser.wits.tsv # <-- 3. Table of sequences and their ITSx-detected positions
+├── itsqc.wits.fna # <-- 1. FASTA file of dereplicated sequences with an ITS region
+└── itsqc.wits.tsv # <-- 2. Table of sequences and their ITSx-detected positions
 ```
 
 ### Key Output Files
 
-1. `ecmitser.wits.fna`: The final, filtered set of unique sequences that were confirmed to contain an ITS region. These are the sequences used as queries in the BLAST search.
+1. `itsqc.wits.fna`: The final, filtered set of unique sequences that were confirmed to contain an ITS region. These are the sequences used as queries in the BLAST search.
 
-2. `ecmitser.wits.tsv`: A simple 3-column table (`SeqID`, `ITSx_Start`, `ITSx_Stop`) for sequences that passed ITSx filtering.
+2. `itsqc.wits.tsv`: A simple 3-column table (`SeqID`, `ITSx_Start`, `ITSx_Stop`) for sequences that passed ITSx filtering.
 
 ---
 
