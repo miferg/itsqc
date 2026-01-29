@@ -16,7 +16,7 @@ rule all:
         str(outdir) + "/itsx_out/itsx_out.positions.txt",
         str(outdir) + "/itsqc.wits.tsv",
         str(outdir) + "/itsqc.wits.fna",
-        str(outdir) + "/annot/sh_general_release_dynamic_s_19.02.2025.fasta"
+        str(outdir) + "/annot/General_EUK_ITS_v2.0.fasta"
 
 rule merge_fna_files:
     input:
