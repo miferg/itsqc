@@ -65,7 +65,7 @@ rule unzip_annot_db:
         str(outdir) +'/annot'
     shell:
         """
-        7zip x {input} -o{params}
+        7z x {input} -o{params}
         """
 
 rule  orient_sequences:
