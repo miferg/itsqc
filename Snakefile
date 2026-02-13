@@ -3,6 +3,7 @@ import glob
 import os
 import pathlib
 
+# read arguments
 querydir = Path(config["querydir"])
 outdir = Path(config["outdir"])
 LOCBASE = [x.split('.fna')[0] for x in os.listdir(querydir) if x.endswith('.fna')]
